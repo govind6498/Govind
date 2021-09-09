@@ -1,0 +1,52 @@
+package bridgelabz;
+public class Line2 {
+	   double x1,x2,y1,y2;
+	   public Line2(double x1,double x2,double y1,double y2){
+		   this.x1=x1;
+		   this.y1=y1;
+		   this.x2=x2;
+		   this.y2=y2;
+	   }
+	   public double getLegth() {
+		   return Math.round(Math.sqrt(Math.pow(x2-x1, 2)+Math.pow(y2-y1,2)));
+	   }
+	   public boolean equals(Line2 L) {
+		   Double len1=this.getLegth();
+		   Double len2=L.getLegth();
+		return len1.equals(len2);
+	   }
+	   public int compareTo(Line2 L) {
+		   Double len1=this.getLegth();
+		   Double len2=L.getLegth();
+		   return len1.compareTo(len2);
+	   }
+	  public static void main(String[] args) {
+		  Line L1=new Line(-7,-4,17,6.5);
+		  Line L2=new Line(17,6.5,-12,4);
+		  
+		  //use case 1
+		  System.out.println("Length of Line 1="+L1.getLegth()+"\t"+"Length of Line 2="+L2.getLegth());
+		  System.out.println();
+		  //Use case 2
+		  boolean result1=L1.equals(L2);
+		  if(result1==true) {
+			  System.out.println("Length of Line 1 is Equla to Length of Line 2");
+		  }
+		  else {
+			  System.out.println("Length of Line 1 is not equals to Line 2.");  
+		  }
+		  //use case 3
+		  int result2=L1.compareTo(L2);
+		  if(result2==0) {
+			  System.out.println("Length of Line 1 is equals to Line 2.");  
+		  }
+		  else if(result2>0) {
+			  System.out.println("Line 1 is greater than  Line 2.");  
+		  }
+		  else {
+			  System.out.println("Line 1 is less than Line 2.");  
+		  }
+	  }
+	   
+}
+
